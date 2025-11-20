@@ -163,6 +163,7 @@ section {
 }
 
 .about-text p {
+  text-indent: 2em; /* เว้นย่อหน้าประมาณ 2 ตัวอักษร */
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
