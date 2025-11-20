@@ -49,7 +49,7 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="hero">
-        <div classNa  me="hero-content">
+        <div className="hero-content">
           <h1 className="hero-title">Hi, I'm <span className="highlight">Phongsakron Chingnu</span></h1>
           <p className="hero-subtitle">Full Stack Developer</p>
           <p className="hero-description">
@@ -114,7 +114,7 @@ function App() {
                     <span key={i} className="tag">{tech}</span>
                   ))}
                 </div>
-                <a href={project.link} className="project-link">View Project →</a>
+                <a href={project.link} className="project-link">Github →</a>
               </div>
             ))}
           </div>

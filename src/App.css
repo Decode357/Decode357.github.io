@@ -19,11 +19,17 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(36, 36, 36, 0.6);
-  backdrop-filter: blur(10px);
+  background: rgba(36, 36, 36, 0.3);
+  backdrop-filter: blur(2px);
   padding: 1rem 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+.navbar:hover {
+  background: rgba(36, 36, 36, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.7);
 }
 
 .nav-container {
@@ -51,7 +57,29 @@
   color: rgba(255, 255, 255, 0.87);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: all 0.3s ease; /* เปลี่ยนเป็น all 0.3s ease */
+  position: relative;
+  padding-bottom: 5px;
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 5px rgba(0, 153, 255, 0.1);
+}
+
+/* เพิ่ม underline effect */
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #646cff;
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
 }
 
 .nav-menu a:hover {
@@ -173,11 +201,15 @@ section {
 }
 
 .about-text p {
-  text-indent: 2em; /* เว้นย่อหน้าประมาณ 2 ตัวอักษร */
-  font-size: 1.3rem;  
+  text-indent: 2em;
+  font-size: 1.3rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 1);
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(0, 153, 255, 0.7);
 }
 
 /* Skills Section */
@@ -202,6 +234,7 @@ section {
 }
 
 .skill-category:hover {
+  backdrop-filter: blur(10px);
   background: rgba(10, 10, 10, 0.7);
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(100, 108, 255, 0.7);
@@ -215,6 +248,10 @@ section {
 
 .skill-category ul {
   list-style: none;
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(0, 153, 255, 0.7);
 }
 
 .skill-category li {
@@ -250,6 +287,7 @@ section {
 }
 
 .project-card:hover {
+  backdrop-filter: blur(10px);
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(100, 108, 255, 0.7);
 }
@@ -264,6 +302,10 @@ section {
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 1rem;
   line-height: 1.6;
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(0, 153, 255, 0.7);
 }
 
 .tech-tags {
