@@ -23,10 +23,12 @@ function App() {
   ]
 
   const skills = [
-    { category: 'Frontend', items: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'] },
-    { category: 'Backend', items: ['Laravel (Backend Framework)','MVC Architecture','Eloquent ORM'] },
+    { category: 'Frontend', items: ['React', 'HTML5', 'CSS3', 'Tailwind CSS', 'JavaScript'] },
+    { category: 'Backend', items: ['Laravel', 'MVC Architecture', 'Eloquent ORM'] },
     { category: 'Database', items: ['Firebase', 'MySQL'] },
-    { category: 'Tools', items: ['Git', 'Docker', 'VS Code', 'Laragon', 'XAMPP'] }
+    { category: 'Tools', items: ['Git', 'Docker', 'VS Code', 'Laragon', 'XAMPP'] },
+    { category: 'Languages', items: ['Java','Python','JavaScript', 'PHP'] },
+    { category: 'Design / UI Tools', items: ['Canva',] }
   ]
 
   return (
@@ -47,7 +49,7 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="hero">
-        <div className="hero-content">
+        <div classNa  me="hero-content">
           <h1 className="hero-title">Hi, I'm <span className="highlight">Phongsakron Chingnu</span></h1>
           <p className="hero-subtitle">Full Stack Developer</p>
           <p className="hero-description">

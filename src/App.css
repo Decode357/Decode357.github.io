@@ -6,6 +6,12 @@
 
 .portfolio {
   width: 100%;
+  background-image: url('/images/outer-wilds-4k.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
 }
 
 /* Navigation */
@@ -13,7 +19,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(36, 36, 36, 0.95);
+  background: rgba(36, 36, 36, 0.6);
   backdrop-filter: blur(10px);
   padding: 1rem 0;
   z-index: 1000;
@@ -60,11 +66,13 @@
   justify-content: center;
   padding: 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
+
 
 .hero-content {
   max-width: 800px;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-title {
@@ -154,7 +162,9 @@ section {
 
 /* About Section */
 .about {
-  background: #1a1a1a;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 1rem 2rem 1rem;
+  border-radius: 12px;
 }
 
 .about-content {
@@ -164,33 +174,37 @@ section {
 
 .about-text p {
   text-indent: 2em; /* เว้นย่อหน้าประมาณ 2 ตัวอักษร */
-  font-size: 1.1rem;
+  font-size: 1.3rem;  
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
 }
 
 /* Skills Section */
 .skills {
-  background: #242424;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 1rem 2rem 1rem;
+  border-radius: 12px;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
   gap: 2rem;
 }
 
 .skill-category {
-  background: #1a1a1a;
+  background: rgba(0, 0, 0, 0.3);
   padding: 2rem;
   border-radius: 12px;
   transition: transform 0.3s;
+  box-shadow: 0 10px 30px rgba(100, 108, 255, 0.3);
 }
 
 .skill-category:hover {
+  background: rgba(10, 10, 10, 0.7);
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(100, 108, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(100, 108, 255, 0.7);
 }
 
 .skill-category h3 {
@@ -215,7 +229,9 @@ section {
 
 /* Projects Section */
 .projects {
-  background: #1a1a1a;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 1rem 2rem 1rem;
+  border-radius: 12px;
 }
 
 .projects-grid {
@@ -225,7 +241,8 @@ section {
 }
 
 .project-card {
-  background: #242424;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(100, 108, 255, 0.2);
   padding: 2rem;
   border-radius: 12px;
   transition: transform 0.3s;
@@ -234,8 +251,7 @@ section {
 
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: #646cff;
-  box-shadow: 0 10px 30px rgba(100, 108, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(100, 108, 255, 0.7);
 }
 
 .project-card h3 {
@@ -279,7 +295,9 @@ section {
 
 /* Contact Section */
 .contact {
-  background: #242424;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 1rem 2rem 1rem;
+  border-radius: 12px;
   text-align: center;
 }
 
@@ -303,7 +321,7 @@ section {
 .contact-link {
   display: inline-block;
   padding: 1rem 2rem;
-  background: #1a1a1a;
+  background: rgba(100, 108, 255, 0.2);
   color: rgba(255, 255, 255, 0.87);
   text-decoration: none;
   border-radius: 8px;
@@ -320,7 +338,7 @@ section {
 
 /* Footer */
 .footer {
-  background: #1a1a1a;
+  background: rgba(0, 0, 0, 0.7);
   padding: 2rem;
   text-align: center;
   color: rgba(255, 255, 255, 0.6);
