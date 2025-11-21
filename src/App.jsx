@@ -16,6 +16,7 @@ function App() {
       document.body.style.overflow = 'unset'
     }
   }, [selectedProject])
+
   const projects = [  
     {
       title: 'Project Master Database (Intern Project)',
@@ -48,12 +49,56 @@ function App() {
   ]
 
   const skills = [
-    { category: 'Frontend', items: ['React', 'HTML5', 'CSS3', 'Tailwind CSS', 'JavaScript'] },
-    { category: 'Backend', items: ['Laravel', 'MVC Architecture', 'Eloquent ORM'] },
-    { category: 'Database', items: ['Firebase', 'MySQL'] },
-    { category: 'Tools', items: ['Git', 'Docker', 'VS Code', 'Laragon', 'XAMPP'] },
-    { category: 'Languages', items: ['Java','Python','JavaScript', 'PHP'] },
-    { category: 'Design / UI Tools', items: ['Canva',] }
+    { 
+      category: 'Frontend', 
+      items: [
+        { name: 'React', icon: '/images/icons/react.png', link: 'https://react.dev/' },
+        { name: 'HTML5', icon: '/images/icons/html5.png', link: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+        { name: 'CSS3', icon: '/images/icons/css3.png', link: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+        { name: 'Tailwind CSS', icon: '/images/icons/tailwind.png', link: 'https://tailwindcss.com/docs' },
+        { name: 'JavaScript', icon: '/images/icons/javascript.png', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' }
+      ]
+    },
+    { 
+      category: 'Backend', 
+      items: [
+        { name: 'Laravel', icon: '/images/icons/laravel.png', link: 'https://laravel.com/docs' },
+        { name: 'MVC Architecture', icon: '/images/icons/mvc.png', link: 'https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller' },
+        { name: 'Eloquent ORM', icon: '/images/icons/eloquent.png', link: 'https://laravel.com/docs/eloquent' }
+      ]
+    },
+    { 
+      category: 'Database', 
+      items: [
+        { name: 'Firebase', icon: '/images/icons/firebase.png', link: 'https://firebase.google.com/docs' },
+        { name: 'MySQL', icon: '/images/icons/mysql.png', link: 'https://dev.mysql.com/doc/' }
+      ]
+    },
+    { 
+      category: 'Tools', 
+      items: [
+        { name: 'Git', icon: '/images/icons/git.png', link: 'https://git-scm.com/doc' },
+        { name: 'Docker', icon: '/images/icons/docker.png', link: 'https://docs.docker.com/' },
+        { name: 'VS Code', icon: '/images/icons/vscode.png', link: 'https://code.visualstudio.com/docs' },
+        { name: 'Laragon', icon: '/images/icons/laragon.png', link: 'https://laragon.org/docs/' },
+        { name: 'XAMPP', icon: '/images/icons/xampp.png', link: 'https://www.apachefriends.org/index.html' }
+      ]
+    },
+    { 
+      category: 'Languages', 
+      items: [
+        { name: 'Java', icon: '/images/icons/java.png', link: 'https://docs.oracle.com/en/java/' },
+        { name: 'Python', icon: '/images/icons/python.png', link: 'https://docs.python.org/3/' },
+        { name: 'JavaScript', icon: '/images/icons/javascript.png', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+        { name: 'PHP', icon: '/images/icons/php.png', link: 'https://www.php.net/docs.php' }
+      ]
+    },
+    { 
+      category: 'Design', 
+      items: [
+        { name: 'Canva', icon: '/images/icons/canva.png', link: 'https://www.canva.com/learn/' }
+      ]
+    }
   ]
 
   return (
@@ -116,7 +161,17 @@ function App() {
                 <h3>{skill.category}</h3>
                 <ul>
                   {skill.items.map((item, i) => (
-                    <li key={i}>{item}</li>
+                    <li key={i}>
+                      <a 
+                        href={item.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="skill-link"
+                      >
+                        <img src={item.icon} alt={item.name} className="skill-icon" />
+                        <span>{item.name}</span>
+                      </a>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -182,23 +237,25 @@ function App() {
 
       {/* Contact Section */}
       <section id="contact" className="contact">
-        <div className="container">
-          <h2 className="section-title">Get In Touch</h2>
-          <div className="contact-content">
-            <p>I'm always open to new opportunities and collaborations.</p>
-            <div className="contact-links">
-              <a href="mailto:dear0935780211@gmail.com" className="contact-link">
-                📧 dear0935780211@gmail.com
-              </a>
-              <a href="https://github.com/Decode357" target="_blank" rel="noopener noreferrer" className="contact-link">
-                🔗 GitHub
-              </a>
-              {/* <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="contact-link">
-                💼 LinkedIn
-              </a> */}
-            </div>
-          </div>
-        </div>
+<div className="container">
+  <h2 className="section-title">Get In Touch</h2>
+  <div className="contact-content">
+    <p>I'm always open to new opportunities and collaborations.</p>
+    <div className="contact-links">
+      <a href="mailto:dear0935780211@gmail.com" className="contact-link-1">
+        <img src="/images/gmail-ic.png" alt="Gmail" className="contact-icon-1" /> dear0935780211@gmail.com
+      </a>
+      <a href="https://github.com/Decode357" target="_blank" rel="noopener noreferrer" className="contact-link-2">
+        <img src="/images/github-ic.png" alt="GitHub" className="contact-icon-2" /> Decode357
+      </a>
+      {/* LinkedIn ตัวอย่าง */} 
+      {/* <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="contact-link">
+        <img src="/icons/linkedin.png" alt="LinkedIn" className="contact-icon" /> LinkedIn
+      </a> */}
+    </div>
+  </div>
+</div>
+
       </section>
 
       {/* Footer */}
