@@ -262,8 +262,7 @@ section {
   list-style: none;
   text-shadow:
     0 0 5px rgba(255, 255, 255, 0.8),
-    0 0 10px rgba(255, 255, 255, 0.6),
-    0 0 20px rgba(0, 153, 255, 0.7);
+    0 0 5px rgba(255, 255, 255, 0.4);
 }
 
 .skill-category li {
@@ -297,6 +296,13 @@ section {
   object-fit: contain;
   transition: transform 0.3s;
   filter: drop-shadow(0 0 3px rgba(100, 108, 255, 0.5));
+}
+.logo-logo {
+  margin-right: 10px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.3s;
+  filter: drop-shadow(0 0 5px rgba(100, 108, 255, 1));
 }
 
 .skill-link:hover .skill-icon {
@@ -344,8 +350,7 @@ section {
   line-height: 1.6;
   text-shadow:
     0 0 5px rgba(255, 255, 255, 0.8),
-    0 0 10px rgba(255, 255, 255, 0.6),
-    0 0 20px rgba(0, 153, 255, 0.1);
+    0 0 7px rgba(255, 255, 255, 0.6);
 }
 
 .tech-tags {
@@ -598,7 +603,7 @@ section {
 }
 
 .contact-content {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   text-shadow:
     0 0 5px rgba(255, 255, 255, 0.8),
@@ -613,42 +618,34 @@ section {
 }
 
 .contact-links {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* ยืดหยุ่นขึ้น */
   gap: 1rem;
 }
 
-.contact-link-1 {
-  display: inline-flex; /* เปลี่ยนจาก inline-block เป็น inline-flex */
-  align-items: center; /* จัด icon และ text อยู่ตรงกลางแนวแกนแนวนอน */
-  gap: 0.5rem;          /* ช่องว่างระหว่าง icon กับ text */
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.4);
-  color: white; 
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s;
-  
-}
+/* ปรับปุ่มให้ยืดเต็ม column */
+.contact-link-1,
 .contact-link-2 {
-  display: inline-flex; /* เปลี่ยนจาก inline-block เป็น inline-flex */
-  align-items: center; /* จัด icon และ text อยู่ตรงกลางแนวแกนแนวนอน */
-  gap: 0.5rem;          /* ช่องว่างระหว่าง icon กับ text */
-  padding: 1rem 2rem;
-  background: rgb(255, 255, 255, 0.4);
+  display: flex;           
+  align-items: center;      
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;     
+  background: rgba(255, 255, 255, 0.4);
   color: white;
   text-decoration: none;
   border-radius: 8px;
   transition: all 0.3s;
+  width: 100%;               /* สำคัญ: ยืดเต็มกริด */
+  word-break: break-word;    /* กันล้น */
 }
 
-.contact-link-1:hover{
+/* Hover */
+.contact-link-1:hover {
   background: white;
   color: black;
   transform: translateX(5px);
   box-shadow: inset 0 0 0 3px rgba(255, 0, 0, 1);
 }
-
 .contact-link-2:hover {
   background: white;
   color: black;
@@ -656,24 +653,23 @@ section {
   box-shadow: inset 0 0 0 3px rgb(0, 0, 0);
 }
 
-
-.contact-icon-1 {
-  align-items: center;
-  background-color: white;
-  border-radius: 3px;
-  width: 32px;     
-  max-width: 40px;   
-  max-height: 40px;  
-  object-fit: contain; 
-  margin-right: 10px;  
-}
+/* ไอคอน */
+.contact-icon-1,
 .contact-icon-2 {
-  background-color: black;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;   /* ไม่ให้ภาพยืดหรือโดนบีบ */
   border-radius: 3px;
-  width: 32px;    
-  height: 32px;   
-  max-width: 40px;  
-  max-height: 40px; 
-  object-fit: contain; 
-  margin-right: 10px;  
+  margin-right: 5px;
+} 
+
+.contact-icon-2 {
+  background: black;
+}
+
+@media (max-width: 770px) {
+  .contact-links {
+    grid-template-columns: 1fr; /* บังคับเป็น 1 คอลัมน์ */
+  }
 }
