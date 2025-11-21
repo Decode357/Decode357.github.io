@@ -1,12 +1,37 @@
 import './App.css'
+import { useState, useEffect } from 'react'
 
 function App() {
+  const [selectedProject, setSelectedProject] = useState(null)
+  // ควบคุม body scroll เมื่อเปิด/ปิด modal
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [selectedProject])
   const projects = [  
     {
       title: 'Project Master Database (Intern Project)',
       description: 'Master data management system for organizations developed with the Laravel Framework',
       technologies: ['Laravel', 'PHP', 'MySQL','Tailwind CSS',],
-      link: 'https://github.com/Decode357/Project_Master_Database'
+      link: 'https://github.com/Decode357/Project_Master_Database',
+      images: [
+        '/images/PJ1-1-1.png',
+        '/images/PJ1-1.png',
+        '/images/PJ1-2.png',
+        '/images/PJ1-3.png',
+        '/images/PJ1-4.png',
+        '/images/PJ1-5.png',
+        '/images/PJ1-6.png',
+      ],
+      fullDescription: 'A comprehensive master data management system built during my internship. Features include data validation, role-based access control, and real-time updates.'
     },
     // {
     //   title: 'Project 2',
@@ -114,12 +139,46 @@ function App() {
                     <span key={i} className="tag">{tech}</span>
                   ))}
                 </div>
-                <a href={project.link} className="project-link">Github →</a>
+                <div className="project-actions">
+                  <button 
+                    onClick={() => setSelectedProject(project)}
+                    className="project-preview-btn"
+                  >
+                    Preview
+                  </button>
+                  <a href={project.link} className="project-link">GitHub →</a>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Project Preview Modal */}
+      {selectedProject && (
+        <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setSelectedProject(null)}>
+              ✕
+            </button>
+            <h2>{selectedProject.title}</h2>
+            <div className="modal-images">
+              {selectedProject.images?.map((image, idx) => (
+                <img key={idx} src={image} alt={`${selectedProject.title} preview ${idx + 1}`} />
+              ))}
+            </div>
+            <p className="modal-description">{selectedProject.fullDescription}</p>
+            <div className="modal-tech">
+              {selectedProject.technologies.map((tech, i) => (
+                <span key={i} className="tag">{tech}</span>
+              ))}
+            </div>
+            <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              GitHub
+            </a>
+          </div>
+        </div>
+      )}
 
       {/* Contact Section */}
       <section id="contact" className="contact">
